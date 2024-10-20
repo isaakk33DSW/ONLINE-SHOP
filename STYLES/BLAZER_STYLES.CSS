@@ -1,0 +1,142 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+header {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 1rem 0;
+
+}
+
+.home-link {
+    text-decoration: none;
+    color: white;
+}
+
+.home-link:hover {
+    color: RED;
+}
+
+
+
+.product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 500px;
+    object-fit: cover;
+}
+
+
+.product-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/IMG/syntwave 1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+@media (max-width: 760px) {
+    .product-image img {
+        width: 100%;
+        max-width: 200px;
+        object-fit: cover;
+    }
+
+}
+
+.product-info h2 { 
+    font-size: 4rem;
+    font-weight: 900;
+    color: black; 
+
+}
+
+.price {
+    font-size: 3rem;
+    color: #000000;
+
+    
+}
+
+
+.add-to-cart-btn {
+    background-color: #111;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #00fff2;
+    color: black;
+}
+
+
+.product-detail {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.product-detail img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+@media (min-width: 768px) {
+    .product-detail {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Tamaño mínimo en pantallas medianas */
+    }
+
+    
+}
+
+@media (min-width: 1200px) {
+    .product-detail {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tamaño mínimo en pantallas grandes */
+    }
+}
+
+
+
+.encuentranos img {
+
+    width: 1000px;
+    margin-left: 25%;
+    background-size: contain;
+
+
+
+}
+
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="STYLES/BLAZER_STYLES.CSS" />
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="index.html" class="home-link">JENK STORE</a>
+        </h1>
+    </header>
+    
+    
+
+    <div class="product-container">
+        <!-- Imagen Principal -->
+        <figure class="product-image">
+            <img src="IMG_TRS/BLAZER MID 77 TRS PRODUCT.png" alt="Nike Blazer 77" />
+            <div class="product-info">
+                <h2>NIKE BLAZER<br>77'</h2>
+                <p class="price">$95</p>
+                <button class="add-to-cart-btn" onclick="window.location.href='https://wa.me/593998170940';" data-product-id="1" data-product-name="Nike Blazer 77" data-product-price="95.00">
+                    COMPRAR
+                </button>
+
+
+            </div>
+        </figure>
+    </div>
+
+    <div class="encuentranos">
+        <img src="IMG/LINKS.png" alt="LINKS" />
+    </div>
+    
+    <script>
+
+        const backgrounds = [
+            '/IMG/syntwave 1.jpg',
+            '/IMG/syntwave 2.jpg',
+            '/IMG/syntwave 3.png',
+            '/IMG/syntwave 4.jpg',
+            '/IMG/syntwave 5.jpg',
+            '/IMG/syntwave 6.jpg',
+
+        ];
+    
+        let currentIndex = 0; // Índice de la imagen actual
+        const productContainer = document.querySelector('.product-container'); // Selecciona el contenedor
+    
+        // Función para precargar imágenes
+        const preloadImages = (imageArray) => {
+            imageArray.forEach((src) => {
+                const img = new Image();
+                img.src = src; // Carga la imagen en segundo plano
+            });
+        };
+    
+        // Precargar las imágenes
+        preloadImages(backgrounds);
+    
+        function changeBackground() {
+            const nextImage = backgrounds[(currentIndex + 1) % backgrounds.length];
+            
+            // Crea una nueva imagen y establece un tiempo de espera para cambiar
+            const img = new Image();
+            img.src = nextImage;
+            
+            img.onload = () => {
+                currentIndex = (currentIndex + 1) % backgrounds.length; 
+                productContainer.style.backgroundImage = `url('${backgrounds[currentIndex]}')`; 
+            };
+    
+            // Manejo de error
+            img.onerror = () => {
+                productContainer.style.backgroundColor = '/IMG/syntwave 1.jpg'; // Fondo alternativo en caso de error
+            };
+        }
+    
+        setInterval(changeBackground, 1200);
+    </script>
+    
+
+
+   <div class="product-detail">
+    <img src="IMG/BLAZER PRODUCT 1.jpg" alt="Producto 1" />
+    <img src="IMG/BLAZER PRODUCT 2.jpg" alt="Producto 2" />
+    <img src="IMG/BLAZER PRODUCT 3.jpg" alt="Producto 3" />
+    <img src="IMG/BLAZER PRODUCT 4.jpg" alt="Producto 4" />
+</div>
+
+
+            
+        
+    
+</body>
+</html>
